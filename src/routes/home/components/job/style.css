@@ -1,0 +1,55 @@
+.wrapper {
+  background: white;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+  border-bottom: 1px solid #d8d8d8;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  color: #00B9BF;
+  text-decoration: none;
+}
+
+.title h1 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: #8a9ca5;
+  margin: 0;
+}
+
+.votes {
+  display: flex;
+}
+
+.upvotes,
+.downvotes {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.upvotes > *,
+.downvotes > * {
+  font-size: 1rem;
+}
+
+.upvotes > i,
+.downvotes > i {
+  margin-right: 4px;
+}
+
+.upvotes {
+  color: #00B9BF;
+}
+
+.downvotes {
+  color: #f24440;
+}

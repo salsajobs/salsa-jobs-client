@@ -1,5 +1,5 @@
-.home {
-	padding: 56px 20px;
-	min-height: 100%;
-	width: 100%;
+.jobsList {
+	padding: 0;
+	max-width: 600px;
+	margin: 0 auto;
 }

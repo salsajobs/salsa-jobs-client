@@ -1,13 +1,27 @@
-import { h, Component } from 'preact';
-import style from './style';
+import { h, Component } from 'preact'
+import style from './style.css'
+import Job from './components/job'
 
-export default class Home extends Component {
-	render() {
-		return (
-			<div class={style.home}>
-				<h1>Home</h1>
-				<p>This is the Home component.</p>
-			</div>
-		);
-	}
+const API_URL = 'http://localhost:3000'
+
+class Home extends Component {
+  state = {
+    jobs: [],
+  }
+
+  componentDidMount() {
+    fetch(`${API_URL}/jobs`)
+      .then(res => res.json())
+      .then(jobs => jobs && this.setState({ jobs }))
+  }
+
+  render() {
+    return (
+      <ul class={style.jobsList}>
+        {this.state.jobs.map(job => <Job {...job} />)}
+      </ul>
+    )
+  }
 }
+
+export default Home
