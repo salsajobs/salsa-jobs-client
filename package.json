@@ -25,7 +25,8 @@
         "error",
         2
       ],
-      "compat/compat": 0
+      "compat/compat": 0,
+      "camelcase": 0
     }
   },
   "devDependencies": {

@@ -3,22 +3,28 @@ import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import style from './style.css'
 import Icon from '../../../../components/icon'
 
-const Header = ({ createdAt, description, downvotes, link, upvotes }) => (
+const Header = ({
+  createdAt,
+  description,
+  link,
+  meta: { team_domain },
+  votes: { downvotes, upvotes },
+}) => (
   <li class={style.wrapper}>
     <div>
       <a href={link} class={style.title}>
         <h1>{description}</h1>
       </a>
       <p class={style.meta}>
-        Posted {distanceInWordsToNow(createdAt)} ago in SomeSlackChannel
+        Posted {distanceInWordsToNow(createdAt)} ago in {team_domain}
       </p>
     </div>
     <div class={style.votes}>
       <span class={style.upvotes}>
-        <Icon value="thumb_up" alt="Upvotes" /> {upvotes}
+        <Icon value="thumb_up" alt="Upvotes" /> {upvotes.length}
       </span>
       <span class={style.downvotes}>
-        <Icon value="thumb_down" alt="Downvotes" /> {downvotes}
+        <Icon value="thumb_down" alt="Downvotes" /> {downvotes.length}
       </span>
     </div>
   </li>
@@ -26,18 +32,28 @@ const Header = ({ createdAt, description, downvotes, link, upvotes }) => (
 
 Header.defaultProps = {
   createdAt: 0,
-  description: 'No description',
-  downvotes: 0,
+  description: '-',
   link: '',
-  upvotes: 0,
+  votes: {
+    downvotes: [],
+    upvotes: [],
+  },
+  meta: {
+    team_domain: '-',
+  },
 }
 
 Header.propTypes = {
   createdAt: PropTypes.number,
   description: PropTypes.string,
-  downvotes: PropTypes.number,
   link: PropTypes.string,
-  upvotes: PropTypes.number,
+  meta: PropTypes.shape({
+    team_domain: PropTypes.string,
+  }),
+  votes: PropTypes.shape({
+    downvotes: PropTypes.arrayOf(PropTypes.string),
+    upvotes: PropTypes.arrayOf(PropTypes.string),
+  }),
 }
 
 export default Header
