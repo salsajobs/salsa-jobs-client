@@ -3,12 +3,14 @@ import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import style from './style.css'
 import Icon from '../../../../components/icon'
 
-const Header = ({
+const count = obj => (obj && Object.keys(obj).length) || 0
+
+const Job = ({
   createdAt,
   description,
   link,
   meta: { team_domain },
-  votes: { downvotes, upvotes },
+  votes: { downvote, upvote },
 }) => (
   <li class={style.wrapper}>
     <div>
@@ -21,29 +23,29 @@ const Header = ({
     </div>
     <div class={style.votes}>
       <span class={style.upvotes}>
-        <Icon value="thumb_up" alt="Upvotes" /> {upvotes.length}
+        <Icon value="thumb_up" alt="Upvotes" /> {count(upvote)}
       </span>
       <span class={style.downvotes}>
-        <Icon value="thumb_down" alt="Downvotes" /> {downvotes.length}
+        <Icon value="thumb_down" alt="Downvotes" /> {count(downvote)}
       </span>
     </div>
   </li>
 )
 
-Header.defaultProps = {
+Job.defaultProps = {
   createdAt: 0,
   description: '-',
   link: '',
   votes: {
-    downvotes: [],
-    upvotes: [],
+    downvote: {},
+    upvote: {},
   },
   meta: {
     team_domain: '-',
   },
 }
 
-Header.propTypes = {
+Job.propTypes = {
   createdAt: PropTypes.number,
   description: PropTypes.string,
   link: PropTypes.string,
@@ -51,9 +53,9 @@ Header.propTypes = {
     team_domain: PropTypes.string,
   }),
   votes: PropTypes.shape({
-    downvotes: PropTypes.arrayOf(PropTypes.string),
-    upvotes: PropTypes.arrayOf(PropTypes.string),
+    downvotes: PropTypes.object,
+    upvotes: PropTypes.object,
   }),
 }
 
-export default Header
+export default Job
