@@ -3,14 +3,12 @@ import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import style from './style.css'
 import Icon from '../../../../components/icon'
 
-const count = obj => (obj && Object.keys(obj).length) || 0
-
 const Job = ({
   createdAt,
   description,
   link,
+  votes,
   meta: { team_domain },
-  votes: { downvote, upvote },
 }) => (
   <li class={style.wrapper}>
     <div>
@@ -23,10 +21,10 @@ const Job = ({
     </div>
     <div class={style.votes}>
       <span class={style.upvotes}>
-        <Icon value="thumb_up" alt="Upvotes" /> {count(upvote)}
+        <Icon value="thumb_up" alt="Upvotes" /> {votes.upvote}
       </span>
       <span class={style.downvotes}>
-        <Icon value="thumb_down" alt="Downvotes" /> {count(downvote)}
+        <Icon value="thumb_down" alt="Downvotes" /> {votes.downvote}
       </span>
     </div>
   </li>
