@@ -21,10 +21,10 @@ const Job = ({
     </div>
     <div class={style.votes}>
       <span class={style.upvotes}>
-        <Icon value="thumb_up" alt="Upvotes" /> {votes.upvote}
+        <Icon value="thumb_up" alt="Upvotes" /> {votes.upvotes}
       </span>
       <span class={style.downvotes}>
-        <Icon value="thumb_down" alt="Downvotes" /> {votes.downvote}
+        <Icon value="thumb_down" alt="Downvotes" /> {votes.downvotes}
       </span>
     </div>
   </li>
