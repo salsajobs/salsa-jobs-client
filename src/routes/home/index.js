@@ -2,9 +2,7 @@ import { h, Component } from 'preact'
 import style from './style.css'
 import Job from './components/job'
 import Spinner from './components/spinner'
-
-const API_URL = 'http://localhost:3000'
-// const API_URL = 'https://nsjobs.herokuapp.com'
+import config from '../../config'
 
 class Home extends Component {
   state = {
@@ -13,7 +11,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    fetch(`${API_URL}/jobs`)
+    fetch(`${config.API_URL}/${config.DATABASE_NAME}`)
       .then(res => res.json())
       .then(jobs => jobs && this.setState({ jobs, loading: false }))
   }
