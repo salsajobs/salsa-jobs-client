@@ -1,4 +1,4 @@
 export default {
-    API_URL: 'http://alksjdhf:3000',
-    DATABASE_NAME: 'jobs',
-}  
+  API_URL: process.env.API_URL,
+  DATABASE_NAME: 'jobs',
+}

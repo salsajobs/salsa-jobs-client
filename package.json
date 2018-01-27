@@ -9,7 +9,7 @@
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "test": "eslint src && preact test",
-    "deploy:staging": "echo DEPLOY TO STAGING",
+    "deploy:staging": "API_URL=iago preact build",
     "deploy:production": "echo DEPLOY TO PRODUCTION"
   },
   "eslintConfig": {
@@ -36,7 +36,8 @@
     "eslint-config-flying-rocket": "^1.1.1",
     "if-env": "^1.0.0",
     "preact-cli": "^2.1.0",
-    "prettier": "^1.9.1"
+    "prettier": "^1.9.1",
+    "webpack": "^3.10.0"
   },
   "dependencies": {
     "date-fns": "^1.29.0",
