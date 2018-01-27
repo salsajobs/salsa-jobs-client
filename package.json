@@ -8,7 +8,9 @@
     "build": "preact build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
-    "test": "eslint src && preact test"
+    "test": "eslint src && preact test",
+    "deploy:staging": "echo DEPLOY TO STAGING",
+    "deploy:production": "echo DEPLOY TO PRODUCTION"
   },
   "eslintConfig": {
     "extends": "flying-rocket",
