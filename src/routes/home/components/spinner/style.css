@@ -1,0 +1,53 @@
+/*!
+ * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
+ * Copyright 2015 Daniel Cardoso <@DanielCardoso>
+ * Licensed under MIT
+ */
+ .spinner,
+ .spinner > div {
+    position: relative;
+    box-sizing: border-box;
+    
+ }
+ .spinner {
+    display: block;
+    font-size: 0;
+    color: #5e7580;
+    margin:auto;
+ }
+ .spinner > div {
+     display: inline-block;
+     float: none;
+     background-color: currentColor;
+     border: 0 solid currentColor;
+ }
+ .spinner {
+     width: 128px;
+     height: 128px;
+ }
+ .spinner > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 128px;
+    height: 128px;
+    border-radius: 100%;
+    opacity: .5;
+    animation: ball-scale-pulse 2s infinite ease-in-out;
+ }
+ .spinner > div:last-child {
+    animation-delay: -1.0s;
+ }
+
+ /*
+  * Animation
+  */
+ @keyframes ball-scale-pulse {
+    0%,
+    100% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+ }
