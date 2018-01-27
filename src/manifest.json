@@ -1,6 +1,6 @@
 {
-  "name": "Preact PWA",
-  "short_name": "Preact PWA",
+  "name": "SauceJobs",
+  "short_name": "SauceJobs",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
