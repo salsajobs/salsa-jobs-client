@@ -3,11 +3,6 @@
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>
  * Licensed under MIT
  */
-.spinner {
-    --height: 128px;
-    --width: 128px;
-    --color: #5e7580;
-}
  .spinner,
  .spinner > div {
     position: relative;
@@ -17,7 +12,7 @@
  .spinner {
     display: block;
     font-size: 0;
-    color: var(--color);
+    color: #5e7580;
     margin:auto;
  }
  .spinner > div {
@@ -27,15 +22,15 @@
      border: 0 solid currentColor;
  }
  .spinner {
-     width: var(--width);
-     height: var(--height)
+     width: 128px;
+     height: 128px;
  }
  .spinner > div {
     position: absolute;
     top: 0;
     left: 0;
-    width: var(--width);
-    height: var(--height);
+    width: 128px;
+    height: 128px;
     border-radius: 100%;
     opacity: .5;
     animation: ball-scale-pulse 2s infinite ease-in-out;
