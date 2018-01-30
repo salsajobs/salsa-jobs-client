@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "nsjobs-f8648"
+    "staging": "sauce-jobs-staging",
+    "production": "sauce-jobs-production"
   }
 }

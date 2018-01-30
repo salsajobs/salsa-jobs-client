@@ -9,8 +9,8 @@
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "test": "eslint src && preact test",
-    "deploy:staging": "API_URL=iago preact build",
-    "deploy:production": "echo DEPLOY TO PRODUCTION"
+    "deploy:staging": "API_URL=https://sauce-jobs-staging.herokuapp.com preact build && firebase deploy -P staging",
+    "deploy:production": "API_URL=https://sauce-jobs-production.herokuapp.com preact build && && firebase deploy -P production"
   },
   "eslintConfig": {
     "extends": "flying-rocket",
