@@ -1,50 +1,13 @@
 {
-  "name": "nsjobs-web",
+  "name": "salsa-jobs-web",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "if-env NODE_ENV=production && yarn run -s serve || yarn run -s dev",
-    "build": "preact build",
-    "serve": "preact build && preact serve",
-    "dev": "preact watch",
-    "test": "eslint src && preact test",
-    "deploy:staging": "API_URL=https://sauce-jobs-staging.herokuapp.com preact build && firebase deploy -P staging",
-    "deploy:production": "API_URL=https://sauce-jobs-production.herokuapp.com preact build && && firebase deploy -P production"
-  },
-  "eslintConfig": {
-    "extends": "flying-rocket",
-    "rules": {
-      "react/no-unknown-property": [
-        2,
-        {
-          "ignore": [
-            "class"
-          ]
-        }
-      ],
-      "indent": [
-        "error",
-        2
-      ],
-      "compat/compat": 0,
-      "camelcase": 0
-    }
-  },
-  "devDependencies": {
-    "eslint": "^4.13.0",
-    "eslint-config-flying-rocket": "^1.1.1",
-    "if-env": "^1.0.0",
-    "preact-cli": "^2.1.0",
-    "prettier": "^1.9.1",
-    "webpack": "^3.10.0"
-  },
-  "dependencies": {
-    "date-fns": "^1.29.0",
-    "html-webpack-plugin": "^2.30.1",
-    "preact": "^8.2.6",
-    "preact-compat": "^3.17.0",
-    "preact-router": "^2.6.0",
-    "prop-types": "^15.6.0"
+    "build": "node build.js",
+    "build:staging": "API_URL=https://sauce-jobs-staging.herokuapp.com yarn build",
+    "build:production": "API_URL=https://sauce-jobs-production.herokuapp.com yarn build",
+    "deploy:staging": "yarn build:staging && firebase deploy -P staging",
+    "deploy:production": "yarn build:production && firebase deploy -P production"
   }
 }
