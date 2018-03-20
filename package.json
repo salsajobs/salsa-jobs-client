@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build": "node build.js",
-    "build:staging": "API_URL=https://sauce-jobs-staging.herokuapp.com yarn build",
-    "build:production": "API_URL=https://sauce-jobs-production.herokuapp.com yarn build",
+    "build:staging": "API_URL=https://sauce-jobs-staging.herokuapp.com/jobs yarn build",
+    "build:production": "API_URL=https://sauce-jobs-production.herokuapp.com/jobs yarn build",
     "deploy:staging": "yarn build:staging && firebase deploy -P staging",
     "deploy:production": "yarn build:production && firebase deploy -P production"
   }
