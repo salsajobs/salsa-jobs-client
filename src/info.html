@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Salsa Jobs</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/salsa.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2898fb">
+    <meta name="apple-mobile-web-app-title" content="Salsa Jobs">
+    <meta name="application-name" content="Salsa Jobs">
+    <meta name="msapplication-TileColor" content="#2898fb">
+    <meta name="theme-color" content="#ffffff">
     <style>
         * {
             box-sizing: border-box;
@@ -113,7 +122,7 @@
             </p>
             <p>
                 <b>Salsa Jobs</b> es una aplicación para slack que añade un comando que sube a una base de datos pública y gratuita
-                todas las oferta de trabajo que se compartan. Además permite votar de forma positiva o negativa haciendo
+                todas las oferta de trabajo que se compartan. Además, permite votar de forma positiva o negativa haciendo
                 que sea la comunidad quién juzgue la calidad de las ofertas.</p>
         </div>
     </section>
@@ -121,9 +130,11 @@
         <div class="wrapper">
             <h1>¿Cómo funciona?</h1>
             <b>1. Instala la extensión de slack</b>
-            <p>Haz click en el link para añadir la aplicación de salsa jobs a Slack.</p>
+            <p>Haz click en el
+                <a href="https://slack.com/oauth/authorize?scope=incoming-webhook,commands+team%3Aread&client_id=277656191908.277104326417&redirect_uri=https://sauce-jobs-staging.herokuapp.com/login">link</a>
+                para añadir la aplicación de salsa jobs a Slack.</p>
             <b>2. Publica ofertas de trabajo</b>
-            <p>Utiliza el comando /job para publicar nuevas ofertas de trabajo</p>
+            <p>Utiliza el comando /job para publicar nuevas ofertas de trabajo.</p>
             <b>3. Vota las ofertas</b>
             <p>¿Conoces la empresa? Ayuda a los demás a tomar una decisión!</p>
             <b>4. Explora nuevas ofertas</b>

@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "node build.js",
+    "build": "yarn clean && yarn build:static && node build.js",
+    "clean": "rm -rf build/*",
+    "build:static": "cp -rf src/icons/ build/icons && cp src/salsa.webmanifest build/salsa.webmanifest",
     "build:staging": "API_URL=https://sauce-jobs-staging.herokuapp.com/jobs yarn build",
     "build:production": "API_URL=https://sauce-jobs-production.herokuapp.com/jobs yarn build",
     "deploy:staging": "yarn build:staging && firebase deploy -P staging",
