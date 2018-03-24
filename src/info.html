@@ -68,6 +68,7 @@
 
         .wrapper {
             width: 60%;
+            min-width: 250px;
             max-width: 700px;
             margin: auto;
         }
@@ -100,6 +101,13 @@
             display: block;
             width: 80%;
             margin: auto;
+        }
+
+        .example {
+            font-size: 13px;
+            background: #f2f2f2;
+            padding: 10px;
+            text-align: center;
         }
     </style>
 
@@ -141,7 +149,10 @@
                 <a href="https://slack.com/oauth/authorize?scope=incoming-webhook,commands+team%3Aread&client_id=277656191908.277104326417&redirect_uri=https://sauce-jobs-staging.herokuapp.com/login">link</a>
                 para añadir la aplicación de salsa jobs a Slack.</p>
             <b>2. Publica ofertas de trabajo</b>
-            <p>Utiliza el comando /job para publicar nuevas ofertas de trabajo.</p>
+            <p>Utiliza
+                <a href="#job"> el comando /job</a>
+                para publicar nuevas ofertas de trabajo.
+            </p>
             <b>3. Vota las ofertas</b>
             <p>¿Conoces la empresa? Ayuda a los demás a tomar una decisión!</p>
             <b>4. Explora nuevas ofertas</b>
@@ -150,14 +161,14 @@
     </section>
     <section id="job">
         <div class="wrapper">
-            <h1>El comando /job</h1>
+            <h1>El comando job</h1>
             <p>El comando
                 <b>/job</b> permite publicar ofertas de trabajo en slack escribe "/job" y a continuación los detalles de la
                 oferta por ejemplo:
             </p>
-            <center>
-                <i>Ingeniero de software @ CARTO, Madrid/Remote €50-60K https://boards.greenhouse.io/cartodb/jobs/735141</i>
-            </center>
+            <div class="example">
+                Ingeniero de software @ CARTO, Madrid/Remote €50-60K https://example.com/job/123
+            </div>
             <p>
                 Lo único obligatorio es un
                 <b>link</b> a la oferta original aunque recomendamos adjuntar los siguientes campos:
