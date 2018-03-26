@@ -12,13 +12,13 @@ export const JobsComponent = {
   _getJobs () {
     fetch(JOBS_URL)
       .then(data => data.json())
-      .then(this._addJobs);
+      .then(jobs => this._addJobs(jobs));
   },
 
   _addJobs (jobs) {
     return jobs
       .sort((a, b) => a.createdAt <= b.createdAt)
-      .forEach(this._addJob);
+      .forEach(job => this._addJob(job));
   },
 
   _addJob (job) {
