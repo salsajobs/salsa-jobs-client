@@ -1,0 +1,44 @@
+.page-index {
+  #jobs {
+      padding: 100px 0;
+      max-width: 920px;
+      margin: auto;
+  }
+
+  article {
+      font-weight: 100;
+      display: flex;
+      flex-direction: row;
+      background: white;
+      padding: 30px;
+      border-bottom: 1px solid #ccc;
+  }
+
+  article:first-child {
+      border-top: 1px solid #ccc;
+  }
+
+  article .info {
+      flex: 1;
+  }
+
+  article .info a {
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-bottom: 30px;
+      color: #000;
+  }
+
+  article .info div {
+      font-size: 13px;
+      color: #606060;
+  }
+
+  article .score {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      padding: 0 15px;
+  }
+}

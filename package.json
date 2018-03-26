@@ -4,12 +4,35 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn clean && yarn build:static && node build.js",
+    "build": "yarn clean && gulp build",
+    "start": "yarn build && gulp server",
     "clean": "rm -rf build/*",
-    "build:static": "cp -rf src/icons/ build/icons && cp src/salsa.webmanifest build/salsa.webmanifest",
     "build:staging": "API_URL=https://sauce-jobs-staging.herokuapp.com yarn build",
     "build:production": "API_URL=https://sauce-jobs-production.herokuapp.com yarn build",
     "deploy:staging": "yarn build:staging && firebase deploy -P staging",
     "deploy:production": "yarn build:production && firebase deploy -P production"
+  },
+  "dependencies": {
+    "@babel/register": "^7.0.0-beta.42",
+    "babel": "^6.23.0",
+    "babel-plugin-transform-node-env-inline": "^0.3.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-handlebars": "^5.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }
