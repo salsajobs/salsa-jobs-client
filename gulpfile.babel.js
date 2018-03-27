@@ -18,6 +18,7 @@ const Tasks = Object.freeze({
   STYLES:  'styles',
   DEFAULT: 'default',
   ICONS:   'icons',
+  IMAGES:  'images',
   WATCH:   'watch',
   SERVER:  'server'
 });
@@ -35,6 +36,8 @@ const Paths = Object.freeze({
   MAIN_FILES: './src/views/*.hbs',
   ICONS_SOURCE: 'assets/icons/*.png',
   ICONS_DIST: './build/assets/icons/',
+  IMAGES_SOURCE: 'assets/images/*.png',
+  IMAGES_DIST: './build/assets/images/',
   MAIN_STYLE_FILE: 'assets/styles/main.scss',
   DIST_FILE: 'index.html',
 });
@@ -101,9 +104,15 @@ gulp.task(Tasks.ICONS, function() {
   .pipe(gulp.dest(Paths.ICONS_DIST));
 });
 
+gulp.task(Tasks.IMAGES, function() {
+  return gulp.src(Paths.IMAGES_SOURCE)
+  .pipe(gulp.dest(Paths.IMAGES_DIST));
+});
+
 gulp.task(Tasks.BUILD, [
   Tasks.PAGES,
   Tasks.ICONS,
+  Tasks.IMAGES,
   Tasks.SCRIPTS,
   Tasks.STYLES
 ]);

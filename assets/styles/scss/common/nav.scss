@@ -1,25 +1,27 @@
-.page-header {
-    text-align: center;
-    background: #2898fb;
-    color: white;
-    padding: 140px 0;
+.nav {
+  background-color: #eb5115;
 }
 
-.page-header h1 {
-    margin: 0;
-    font-size: 56px;
-    line-height: 1.38;
+.nav-logo {
+  width: 15px;
+  margin-right: 7.5px;
 }
 
-.page-header h2 {
-    margin: 20px 0 40px 0;
-    color: #dbeefe;
-    font-size: 22px;
-    line-height: 1.8;
-    font-weight: 400
-}
+.nav-list {
+  margin: 0;
+  padding: 1em;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 70% 10% 10% 10%;
 
-.page-header a {
-    display: block;
-    margin-bottom: 40px;
+  li {
+    text-align: left;
+
+    a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+  }
 }

@@ -1,44 +1,49 @@
 .page-index {
-  #jobs {
-      padding: 100px 0;
-      max-width: 920px;
-      margin: auto;
+  section {
+    padding: 2em 0;
   }
 
-  article {
-      font-weight: 100;
-      display: flex;
-      flex-direction: row;
-      background: white;
-      padding: 30px;
-      border-bottom: 1px solid #ccc;
+  .img-sm {
+    display: block;
+    width: 80%;
+    margin: auto;
   }
 
-  article:first-child {
-      border-top: 1px solid #ccc;
+  .example {
+    font-size: .8em;
+    background: #1d1d1d;
+    padding: 1em;
+    margin: 3em auto;
+    color: white;
+    border-radius: 5px;
+
+    p, span {
+      font-family: 'Source Code', monospace;
+      text-align: left;
+    }
+
+    .example--link {
+      color: #ff9800;
+    }
+
+    .example--salary {
+      color: #00bcd4;
+    }
+
+    .example--company {
+      color: #8BC34A;
+    }
+
+    .example--location {
+      color: #9c27b0;
+    }
   }
 
-  article .info {
-      flex: 1;
-  }
+  .example-list {
+    list-style-type: circle;
 
-  article .info a {
-      font-size: 1.2rem;
-      text-decoration: none;
-      margin-bottom: 30px;
-      color: #000;
-  }
-
-  article .info div {
-      font-size: 13px;
-      color: #606060;
-  }
-
-  article .score {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2em;
-      padding: 0 15px;
+    p {
+      text-align: left;
+    }
   }
 }
