@@ -8,11 +8,12 @@
 }
 
 .nav-list {
-  margin: 0;
-  padding: 1em;
-  list-style-type: none;
   display: grid;
-  grid-template-columns: 70% 10% 10% 10%;
+  margin: 0;
+  padding: 1.5em;
+  list-style-type: none;
+  font-weight: 700;
+  font-size: 1.2em;
 
   li {
     text-align: left;

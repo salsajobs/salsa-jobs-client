@@ -3,10 +3,11 @@
       padding: 100px 0;
       max-width: 920px;
       margin: auto;
+      text-align: left;
   }
 
   article {
-      font-weight: 100;
+      font-weight: 700;
       display: flex;
       flex-direction: row;
       background: white;
@@ -23,22 +24,45 @@
   }
 
   article .info a {
-      font-size: 1.2rem;
+      font-size: 1.5em;
       text-decoration: none;
       margin-bottom: 30px;
-      color: #000;
+      color: #eb5115;
+
+      &:hover {
+        text-decoration: underline;
+      }
   }
 
   article .info div {
-      font-size: 13px;
+      font-size: 1em;
       color: #606060;
   }
 
   article .score {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2em;
-      padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    padding: 0 15px;
+
+    span {
+      padding-right: 1em;
+    }
   }
+}
+
+.loader {
+  margin: 0 auto;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

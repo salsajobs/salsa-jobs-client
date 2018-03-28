@@ -12,10 +12,9 @@
     <section class="container container--light">
       <div class="wrapper">
         <p>Nos hemos dado cuenta de que casi todo el mundo pertenece a algún team de Slack en el que hay un canal destinado a compartir y opinar sobre ofertas de empleo.</p>
+        <img class="wrapper-big-image" src="./assets/images/team-small.png" alt="Imagen equipo">
         <p>Por eso, hemos creado una applicación para Slack que permite compartir y votar estas ofertas a través de un <a href="#example">simple comando.</a></p>
         <p>Todas las ofertas, junto con sus votaciones, son subidas a un <a href="/jobs.html">listado público de forma gratuita.</a></p>
-
-        {{!-- <img src="./assets/images/example-laptop.png" alt=""> --}}
       </div>
     </section>
 
@@ -25,19 +24,21 @@
         <h2>¿Cómo funciona?</h2>
 
         <ul>
-          <li>
+          <li class="wrapper-info">
             <p>1. Instala la aplicación de Slack en el canal donde compartís las ofertas.</p>
             <a href="https://slack.com/oauth/authorize?scope=incoming-webhook,commands+team%3Aread&client_id=277656191908.277104326417&redirect_uri=https://sauce-jobs-staging.herokuapp.com/login">
               <img alt="Añadir a Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x"/>
             </a>
           </li>
-          <li>
+
+          <li class="wrapper-info">
             <p>2. Publica ofertas de trabajo de manera automática.</p>
-            <img src="" alt="">
+            <img class="wrapper-example" src="./assets/images/slack-example-general.png" alt="Chat de Slack de ejemplo">
           </li>
-          <li>
+
+          <li class="wrapper-info">
             <p>3. Vota las ofertas.</p>
-            <img src="" alt="">
+            <img class="wrapper-example" src="./assets/images/slack-example-jobs.png" alt="Chat de Slack de ejemplo">
           </li>
         </ul>
       </div>
@@ -52,30 +53,32 @@
         </p>
 
         <div class="example">
-          <p>> /job <span>Ingeniero de software</span> <span class="example--company">@ CARTO</span> <span class="example--location">Madrid/Remote</span> <span class="example--salary">€50-60K</span> <span class="example--link">https://example.com/job/123</span></p>
+          <span class="example--command">> /job</span> <span>Título de la oferta</span> <span class="example--company">@ Mi Empresa</span> <span class="example--location">Madrid/Remote</span> <span class="example--salary">€50-60K</span> <span class="example--link">https://miempresa.com/titulo-ejemplo</span>
         </div>
 
-        <p>
-          Lo único necesario es un link a la oferta original, aunque recomendamos adjuntar estos campos con el siguiente formato:
-        </p>
+        <div class="wrapper-info">
+          <p>Lo único necesario es un link a la oferta original, aunque recomendamos adjuntar estos campos con el siguiente formato:</p>
 
-        <ul class="example-list">
-          <li>
-            <p>Descripción breve: Ingeniero de software</p>
-          </li>
-          <li>
-            <p>Empresa: @ CARTO</p>
-          </li>
-          <li>
-            <p>Lugar: Madrid/Remote</p>
-          </li>
-          <li>
-            <p>Rango salarial: €50-60K</p>
-          </li>
-        </ul>
+          <ul class="example-list">
+            <li>
+              <p>Descripción breve: Título de la oferta</p>
+            </li>
+            <li>
+              <p>Empresa: @ Mi Empresa</p>
+            </li>
+            <li>
+              <p>Lugar: Madrid/Remote</p>
+            </li>
+            <li>
+              <p>Rango salarial: €50-60K</p>
+            </li>
+          </ul>
+        </div>
 
       </div>
     </section>
+
+    {{> footer }}
 
   </body>
 

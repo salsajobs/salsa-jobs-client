@@ -3,6 +3,7 @@ const JOBS_URL = 'https://sauce-jobs-staging.herokuapp.com/jobs';
 export const JobsComponent = {
   init() {
     this.$jobs = document.getElementById('jobs');
+    this.$loader = document.getElementById('jobs-loader');
 
     if (this.$jobs) {
       this._getJobs();
@@ -23,6 +24,7 @@ export const JobsComponent = {
 
   _addJob (job) {
     const $job = document.createElement('article');
+    this.$loader.remove();
 
     $job.innerHTML = `
       <div class="info">
@@ -30,7 +32,7 @@ export const JobsComponent = {
         <div title="Fecha de publicación"> ${new Date(job.createdAt).toLocaleDateString()} </div>
       </div>
       <div title="Puntuación de la oferta" class="score">
-        ${job.votes.upvotes - job.votes.downvotes}
+        <span>${job.votes.upvotes} 👍</span> <span>${job.votes.downvotes} 👎</span>
       </div>
     `;
 

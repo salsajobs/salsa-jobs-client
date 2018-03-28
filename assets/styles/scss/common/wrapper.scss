@@ -10,11 +10,12 @@
   h3 {
     margin: 0;
     font-size: 3em;
+    line-height: 1;
   }
 
   &.container--light {
     background-color: white;
-    color: #eb5115;
+    color: #1d1d1d;
 
     a,
     a:visited,
@@ -47,5 +48,30 @@
     font-size: 1.5em;
     text-align: center;
     font-weight: 700;
+  }
+
+  .wrapper-info {
+    margin: 2em 0 5em 0;
+  }
+}
+
+.wrapper-big-image {
+  width: 80%;
+}
+
+.wrapper-example {
+  width: 100%;
+  box-shadow: 0 0 2em rgba(8, 8, 8, 0.5);
+  border-radius: 5px;
+}
+
+
+@media (max-width: 600px) {
+  .wrapper {
+    width: 80%;
+
+    p {
+      line-height: 1.2;
+    }
   }
 }

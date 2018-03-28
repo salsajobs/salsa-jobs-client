@@ -10,16 +10,22 @@
   }
 
   .example {
-    font-size: .8em;
+    font-size: 1.2em;
     background: #1d1d1d;
     padding: 1em;
     margin: 3em auto;
     color: white;
     border-radius: 5px;
+    text-align: left;
+    overflow: scroll;
 
     p, span {
       font-family: 'Source Code', monospace;
       text-align: left;
+    }
+
+    span {
+      padding-right: .8em;
     }
 
     .example--link {
