@@ -60,7 +60,7 @@ const Transforms = Object.freeze({
 
 gulp.task(Tasks.PAGES, function () {
   const data = {
-    title: 'SalsaJobs'
+    title: 'Salsa Jobs'
   };
 
   const options = {

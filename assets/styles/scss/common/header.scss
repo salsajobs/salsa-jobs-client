@@ -17,10 +17,14 @@
     }
 }
 
-.page-header .page-logo {
-    width: 250px;
-    height: auto;
-    margin: 1em 0;
+.page-logo {
+  width: 250px;
+  height: auto;
+  margin: 1em 0;
+}
+
+.page-logo-error {
+  transform: rotate(180deg);
 }
 
 .page-header h2 {
