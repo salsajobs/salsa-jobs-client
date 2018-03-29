@@ -30,13 +30,13 @@ export const JobsComponent = {
   _addJob(job) {
     const $job = document.createElement('article');
     $job.innerHTML = `
-      <div class="info">
-        <a title="Link a la oferta original" href="${job.link}" > ${job.description} </a>
-        <div title="Fecha de publicación"> ${new Date(job.createdAt).toLocaleDateString()} </div>
-      </div>
-      <div title="Puntuación de la oferta" class="score">
-        <span>${job.votes.upvotes} 👍</span> <span>${job.votes.downvotes} 👎</span>
-      </div>
+        <a title="Link a la oferta original" href="${job.link}" > ${job.description} </a>  
+        <div class="info">
+          <div title="Fecha de publicación"> ${new Date(job.createdAt).toLocaleDateString()} </div>
+          <div title="Puntuación de la oferta" class="score">
+            <span>${job.votes.upvotes} 👍</span> <span>${job.votes.downvotes} 👎</span>
+          </div>
+        </div>
     `;
 
     return this.$jobs.appendChild($job);
