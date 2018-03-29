@@ -1,0 +1,55 @@
+.page-index {
+  section {
+    padding: 2em 0;
+  }
+
+  .img-sm {
+    display: block;
+    width: 80%;
+    margin: auto;
+  }
+
+  .example {
+    font-size: 1.2em;
+    background: #1d1d1d;
+    padding: 1em;
+    margin: 3em auto;
+    color: white;
+    border-radius: 5px;
+    text-align: left;
+    overflow: scroll;
+
+    p, span {
+      font-family: 'Source Code', monospace;
+      text-align: left;
+    }
+
+    span {
+      padding-right: .8em;
+    }
+
+    .example--link {
+      color: #ff9800;
+    }
+
+    .example--salary {
+      color: #00bcd4;
+    }
+
+    .example--company {
+      color: #8BC34A;
+    }
+
+    .example--location {
+      color: #9c27b0;
+    }
+  }
+
+  .example-list {
+    list-style-type: circle;
+
+    p {
+      text-align: left;
+    }
+  }
+}

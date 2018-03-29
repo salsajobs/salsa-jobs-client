@@ -1,0 +1,28 @@
+.nav {
+  background-color: #eb5115;
+}
+
+.nav-logo {
+  width: 15px;
+  margin-right: 7.5px;
+}
+
+.nav-list {
+  display: grid;
+  margin: 0;
+  padding: 1.5em;
+  list-style-type: none;
+  font-weight: 700;
+  font-size: 1.2em;
+
+  li {
+    text-align: left;
+
+    a {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
