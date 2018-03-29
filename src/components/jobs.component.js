@@ -10,22 +10,25 @@ export const JobsComponent = {
     }
   },
 
-  _getJobs () {
+  _getJobs() {
     fetch(JOBS_URL)
       .then(data => data.json())
       .then(jobs => this._addJobs(jobs));
   },
 
-  _addJobs (jobs) {
-    return jobs
-      .sort((a, b) => a.createdAt <= b.createdAt)
-      .forEach(job => this._addJob(job));
+  _addJobs(jobs) {
+    if (jobs) {
+      this.$loader.remove();
+      return jobs
+        .sort((a, b) => a.createdAt <= b.createdAt)
+        .forEach(job => this._addJob(job));
+    } else {
+      this.$jobs.innerHTML = '<h4>No hay ofertas de trabajo disponibles</h4>';
+    }
   },
 
-  _addJob (job) {
+  _addJob(job) {
     const $job = document.createElement('article');
-    this.$loader.remove();
-
     $job.innerHTML = `
       <div class="info">
         <a title="Link a la oferta original" href="${job.link}" > ${job.description} </a>
@@ -37,5 +40,5 @@ export const JobsComponent = {
     `;
 
     return this.$jobs.appendChild($job);
-  }
+  },
 };
