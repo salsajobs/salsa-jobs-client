@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  background: #eb5115;
+  background: $color-main;
   color: white;
   text-align: center;
   padding: 3em 0;
@@ -20,13 +20,13 @@
     a,
     a:visited,
     a:focus {
-      color: #eb5115;
+      color: $color-main;
       text-decoration: underline;
     }
   }
 
   &.container--dark {
-    background-color: #eb5115;
+    background-color: $color-main;
     color: white;
 
     a,
