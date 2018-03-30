@@ -20,7 +20,8 @@ const Tasks = Object.freeze({
   ICONS:   'icons',
   IMAGES:  'images',
   WATCH:   'watch',
-  SERVER:  'server'
+  SERVER:  'server',
+  MANIFEST:  'manifest'
 });
 
 const Paths = Object.freeze({
@@ -40,6 +41,8 @@ const Paths = Object.freeze({
   IMAGES_DIST: './build/assets/images/',
   MAIN_STYLE_FILE: 'assets/styles/main.scss',
   DIST_FILE: 'index.html',
+  MANIFEST_SRC: './src/salsa.webmanifest',
+  MANIFEST_DEST: './build',
 });
 
 const BabelConfig = Object.freeze({
@@ -109,12 +112,18 @@ gulp.task(Tasks.IMAGES, function() {
   .pipe(gulp.dest(Paths.IMAGES_DIST));
 });
 
+gulp.task(Tasks.MANIFEST, function() {
+  return gulp.src(Paths.MANIFEST_SRC)
+  .pipe(gulp.dest(Paths.MANIFEST_DEST));
+});
+
 gulp.task(Tasks.BUILD, [
   Tasks.PAGES,
   Tasks.ICONS,
   Tasks.IMAGES,
   Tasks.SCRIPTS,
-  Tasks.STYLES
+  Tasks.STYLES,
+  Tasks.MANIFEST,
 ]);
 
 gulp.task(Tasks.WATCH, [ Tasks.BUILD ], function () {
