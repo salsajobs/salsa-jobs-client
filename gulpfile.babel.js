@@ -62,7 +62,10 @@ const Transforms = Object.freeze({
 gulp.task(Tasks.PAGES, function () {
   const data = {
     title: 'Salsa Jobs',
-    isProduction: environments.production()
+    isProduction: environments.production(),
+    jobsUrl: environments.production()
+      ? 'https://sauce-jobs-production.herokuapp.com/jobs'
+      : 'https://sauce-jobs-staging.herokuapp.com/jobs'
   };
 
   const options = {

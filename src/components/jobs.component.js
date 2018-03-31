@@ -1,17 +1,16 @@
-const JOBS_URL = 'https://sauce-jobs-staging.herokuapp.com/jobs';
-
 export const JobsComponent = {
   init() {
     this.$jobs = document.getElementById('jobs');
     this.$loader = document.getElementById('jobs-loader');
 
     if (this.$jobs) {
-      this._getJobs();
+      const JOBS_URL = this.$jobs.getAttribute('data-url');
+      this._getJobs(JOBS_URL);
     }
   },
 
-  _getJobs() {
-    fetch(JOBS_URL)
+  _getJobs(url) {
+    fetch(url)
       .then(data => data.json())
       .then(jobs => this._addJobs(jobs));
   },
@@ -30,7 +29,7 @@ export const JobsComponent = {
   _addJob(job) {
     const $job = document.createElement('article');
     $job.innerHTML = `
-        <a title="Link a la oferta original" href="${job.link}" > ${job.description} </a>  
+        <a title="Link a la oferta original" href="${job.link}" > ${job.description} </a>
         <div class="info">
           <div title="Fecha de publicación"> ${new Date(job.createdAt).toLocaleDateString()} </div>
           <div title="Puntuación de la oferta" class="score">
