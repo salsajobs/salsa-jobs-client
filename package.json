@@ -7,10 +7,10 @@
     "build": "yarn clean && gulp build",
     "start": "yarn build && gulp server",
     "clean": "rm -rf build/*",
-    "build:staging": "API_URL=https://sauce-jobs-staging.herokuapp.com yarn build",
-    "build:production": "API_URL=https://sauce-jobs-production.herokuapp.com yarn build",
+    "build:staging": "yarn clean && gulp build --env staging",
+    "build:production": "yarn clean && gulp build --env production",
     "deploy:staging": "yarn build:staging && firebase deploy -P staging",
-    "deploy:production": "yarn build:production && firebase deploy -P production"
+    "deploy:production": "NODE_ENV=production && yarn build:production && firebase deploy -P production"
   },
   "dependencies": {
     "@babel/register": "^7.0.0-beta.42",
@@ -26,6 +26,7 @@
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.5.0",
+    "gulp-environments": "^0.1.2",
     "gulp-handlebars": "^5.0.2",
     "gulp-livereload": "^3.8.1",
     "gulp-rename": "^1.2.2",

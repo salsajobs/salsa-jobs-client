@@ -1,15 +1,16 @@
-const gulp        = require('gulp');
-const handlebars  = require('gulp-compile-handlebars');
-const browserify  = require('browserify');
-const source      = require('vinyl-source-stream');
-const buffer      = require('vinyl-buffer');
-const uglify      = require('gulp-uglify');
-const sourcemaps  = require('gulp-sourcemaps');
-const livereload  = require('gulp-livereload');
-const connect     = require('gulp-connect');
-const rename      = require('gulp-rename');
-const sass        = require('gulp-sass');
-const concat      = require('gulp-concat');
+const gulp         = require('gulp');
+const handlebars   = require('gulp-compile-handlebars');
+const browserify   = require('browserify');
+const source       = require('vinyl-source-stream');
+const buffer       = require('vinyl-buffer');
+const uglify       = require('gulp-uglify');
+const sourcemaps   = require('gulp-sourcemaps');
+const livereload   = require('gulp-livereload');
+const connect      = require('gulp-connect');
+const rename       = require('gulp-rename');
+const sass         = require('gulp-sass');
+const concat       = require('gulp-concat');
+const environments = require('gulp-environments');
 
 const Tasks = Object.freeze({
   BUILD:   'build',
@@ -20,8 +21,7 @@ const Tasks = Object.freeze({
   ICONS:   'icons',
   IMAGES:  'images',
   WATCH:   'watch',
-  SERVER:  'server',
-  MANIFEST:  'manifest'
+  SERVER:  'server'
 });
 
 const Paths = Object.freeze({
@@ -41,8 +41,6 @@ const Paths = Object.freeze({
   IMAGES_DIST: './build/assets/images/',
   MAIN_STYLE_FILE: 'assets/styles/main.scss',
   DIST_FILE: 'index.html',
-  MANIFEST_SRC: './src/salsa.webmanifest',
-  MANIFEST_DEST: './build',
 });
 
 const BabelConfig = Object.freeze({
@@ -63,7 +61,8 @@ const Transforms = Object.freeze({
 
 gulp.task(Tasks.PAGES, function () {
   const data = {
-    title: 'Salsa Jobs'
+    title: 'Salsa Jobs',
+    isProduction: environments.production()
   };
 
   const options = {
@@ -112,18 +111,12 @@ gulp.task(Tasks.IMAGES, function() {
   .pipe(gulp.dest(Paths.IMAGES_DIST));
 });
 
-gulp.task(Tasks.MANIFEST, function() {
-  return gulp.src(Paths.MANIFEST_SRC)
-  .pipe(gulp.dest(Paths.MANIFEST_DEST));
-});
-
 gulp.task(Tasks.BUILD, [
   Tasks.PAGES,
   Tasks.ICONS,
   Tasks.IMAGES,
   Tasks.SCRIPTS,
-  Tasks.STYLES,
-  Tasks.MANIFEST,
+  Tasks.STYLES
 ]);
 
 gulp.task(Tasks.WATCH, [ Tasks.BUILD ], function () {
@@ -144,7 +137,7 @@ gulp.task(Tasks.WATCH, [ Tasks.BUILD ], function () {
 gulp.task(Tasks.SERVER, function() {
   connect.server({
     root: './build',
-    port: 8883
+    port: 5000
   });
 });
 
