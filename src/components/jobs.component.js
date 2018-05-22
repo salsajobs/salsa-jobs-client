@@ -19,11 +19,21 @@ export const JobsComponent = {
     if (jobs) {
       this.$loader.remove();
       return jobs
-        .sort((a, b) => a.createdAt <= b.createdAt)
+        .sort(this._compareDates)
         .forEach(job => this._addJob(job));
     } else {
       this.$jobs.innerHTML = '<h4>No hay ofertas de trabajo disponibles</h4>';
     }
+  },
+
+  _compareDates(a, b) {
+    if (a.createdAt < b.createdAt) {
+      return 1;
+    }
+    if (a.createdAt > b.createdAt) {
+      return -1;
+    }
+    return 0;
   },
 
   _addJob(job) {
