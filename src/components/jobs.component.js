@@ -39,7 +39,7 @@ export const JobsComponent = {
   _addJob(job) {
     const $job = document.createElement('article');
     $job.innerHTML = `
-        <a title="Link a la oferta original" href="${job.link}" > ${job.description} </a>
+        <a title="Link a la oferta original" href="${job.link}" target="_blank"> ${job.description} </a>
         <div class="info">
           <div title="Fecha de publicación"> ${new Date(job.createdAt).toLocaleDateString()} </div>
           <div title="Puntuación de la oferta" class="score">
