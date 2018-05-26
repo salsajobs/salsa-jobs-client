@@ -12,4 +12,4 @@ cookies junto a servicios de terceros (Google Analytics) con el fin de mejorar n
 usuario ha leído y acepta estos términos.
 
 Nos reservamos el derecho de modificar esta política de privacidad, por favor revísala frecuentemente. Cambios y aclaraciones
-entrarán en vigencia inmediatamente después de su publicación en el sitio web.****
+entrarán en vigencia inmediatamente después de su publicación en el sitio web.
