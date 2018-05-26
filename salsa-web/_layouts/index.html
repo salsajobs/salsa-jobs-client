@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+{% include head.html %}
+<link rel="stylesheet" href="{{ '/assets/style/index.css' | relative_url }}">
+
+<body>
+
+    {% include nav.html %} {% include header.html %}
+
+
+    <section>
+        <div class="wrapper">
+            <p>Nos hemos dado cuenta de que casi todo el mundo pertenece a algún team de Slack en el que hay un canal destinado
+                a compartir y opinar sobre ofertas de empleo.</p>
+            <img class="wrapper-big-image" src="{{ '/assets/images/team-small.png' | relative_url }}" alt="Imagen equipo">
+            <p>Por eso, hemos creado una applicación para Slack que permite compartir y votar estas ofertas a través de un
+                <a href="#example">simple comando.</a>
+            </p>
+            <p>Todas las ofertas, junto con sus votaciones, son subidas a un
+                <a href="/jobs.html">listado público de forma gratuita.</a>
+            </p>
+        </div>
+    </section>
+
+    <section class="dark">
+        <div class="wrapper">
+
+            <h2>¿Cómo funciona?</h2>
+
+            <ul>
+                <li>
+                    <p>1. Instala la aplicación de Slack en el canal donde compartís las ofertas.</p>
+                    {% include slack-button.html %}
+                </li>
+
+                <li>
+                    <p>2. Publica ofertas de trabajo de manera automática.</p>
+                    <img class="wrapper-example" src="{{ '/assets/images/slack-example-general.png' | relative_url }}" alt="Chat de Slack de ejemplo">
+                </li>
+
+                <li>
+                    <p>3. Vota las ofertas.</p>
+                    <img class="wrapper-example" src="{{ '/assets/images/slack-example-jobs.png' | relative_url }}" alt="Chat de Slack de ejemplo">
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="example">
+        <div class="wrapper">
+
+            <h2>Un solo comando</h2>
+
+            <p>
+                Utiliza el comando
+                <span class="example--code">/job</span> para publicar las ofertas automáticamente por el canal en el que hayas instalado la aplicación.
+            </p>
+
+            <div class="example">
+                <span class="example--command">> /job</span>
+                <span>Título de la oferta</span>
+                <span class="example--company">@ Mi Empresa</span>
+                <span class="example--location">Madrid/Remote</span>
+                <span class="example--salary">€50-60K</span>
+                <span class="example--link">https://miempresa.com/titulo-ejemplo</span>
+            </div>
+
+            <div>
+                <p>Lo único necesario es un link a la oferta original, aunque recomendamos adjuntar estos campos con el siguiente
+                    formato:
+                </p>
+
+                <pre class="example">
+Descripción breve: Título de la oferta
+Empresa: @ Mi Empresa
+Lugar: Madrid
+Rango salarial: €50-60K</pre>
+            </div>
+        </div>
+    </section>
+    {% include footer.html %}
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/assets/scripts/sw.js');
+        }
+    </script>
+</body>
+
+</html>

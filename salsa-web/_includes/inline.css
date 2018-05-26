@@ -1,0 +1,48 @@
+.wrapper {
+    margin: auto;
+    max-width: 920px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open sans', sans-serif;
+}
+
+nav,
+footer {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.1em;
+    font-weight: 700;
+    justify-content: space-between;
+    padding: 1.5em;
+}
+
+header {
+    font-weight: 700;
+    text-align: center;
+    padding: .5em 1.5em 3em 1.5em;
+}
+
+section {
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+    padding: 1.5em;
+    font-weight: 300;
+}
+
+.dark {
+    background-color: #5386E4;
+    color: white
+}
+
+.dark a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}

@@ -1,0 +1,58 @@
+---
+# Required
+---
+
+section {
+    img {
+        display: block;
+        margin: auto;
+        max-width: 90%;
+    }
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+    ul li {
+        margin-top: 2em;
+    }
+}
+
+.example {
+    font-size: 13px;
+    font-weight: 100;
+    background: #1d1d1d;
+    padding: 1em;
+    margin: 3em auto;
+    color: white;
+    border-radius: 5px;
+    text-align: left;
+    overflow: scroll;
+    font-family: monospace;
+
+    span {
+        padding-right: .8em;
+    }
+
+    .example--company {
+        color: #8BC34A;
+    }
+
+    .example--location {
+        color: #e968ff;
+    }
+
+    .example--salary {
+        color: #00bcd4;
+    }
+
+    .example--link {
+        color: #ff9800;
+    }
+}
+
+.example-list {
+    text-align: left;
+    li {
+        margin-top: 10px;
+    }
+}

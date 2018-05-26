@@ -1,0 +1,22 @@
+---
+# Required
+---
+
+article {
+    text-align: left;
+    margin-bottom: 1em;
+    border-left: 10px solid #5386E4;
+    padding-left: 15px;
+    a {
+        color: #5386E4;
+        text-decoration:none;
+        font-size: 1.2em;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        font-size: .8em;
+        justify-content: space-between;
+    }
+}
