@@ -1,6 +1,15 @@
 ---
 # Required
 ---
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+section {
+    flex: 1;
+}
 
 article {
     text-align: left;
@@ -9,10 +18,9 @@ article {
     padding-left: 15px;
     a {
         color: #5386E4;
-        text-decoration:none;
+        text-decoration: none;
         font-size: 1.2em;
     }
-
     .info {
         display: flex;
         flex-direction: row;
