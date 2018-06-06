@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: page
 ---
 # ¡Gracias por instalar Salsa Jobs!
 

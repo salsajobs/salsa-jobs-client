@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build",
+    "public": "salsa-web/_site",
     "ignore": [
       "firebase.json",
       "**/.*",

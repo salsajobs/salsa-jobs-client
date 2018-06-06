@@ -1,3 +1,6 @@
+---
+---
+
 .wrapper {
     margin: auto;
     max-width: 920px;
@@ -6,6 +9,7 @@
 body {
     margin: 0;
     font-family: 'Open sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 nav,
@@ -13,9 +17,11 @@ footer {
     display: flex;
     flex-direction: row;
     font-size: 1.1em;
+    align-items: center;
     font-weight: 700;
     justify-content: space-between;
-    padding: 1.5em;
+    height: 70px;
+    padding: 0 30px;
 }
 
 header {
@@ -30,16 +36,16 @@ section {
     text-align: center;
     padding: 1.5em;
     font-weight: 300;
+    background: #f8f8f8;
 }
 
 .dark {
     background-color: #5386E4;
-    color: white
-}
-
-.dark a {
     color: white;
-    text-decoration: none;
+     a {
+        color: white;
+        text-decoration: none;
+    }
 }
 
 a:hover,

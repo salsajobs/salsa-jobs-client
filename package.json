@@ -7,7 +7,7 @@
     "build": "yarn clean && gulp build",
     "start": "yarn build && gulp server",
     "clean": "rm -rf build/*",
-    "build:staging": "yarn clean && gulp build --env staging",
+    "build:staging": "bundle exec jekyll build",
     "build:production": "yarn clean && gulp build --env production",
     "deploy:staging": "yarn build:staging && firebase deploy -P staging",
     "deploy:production": "NODE_ENV=production && yarn build:production && firebase deploy -P production"

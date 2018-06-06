@@ -1,5 +1,9 @@
 <footer class="dark">
-  <a href="/jobs.html">Lista de ofertas</a>
+  {% if site.env == 'production' %}
+  <a href="https://slack.com/oauth/authorize?scope=incoming-webhook,commands+team%3Aread&client_id=277656191908.304479939927&redirect_uri=https://sauce-jobs-production.herokuapp.com/login">Añadir a Slack</a>
+  {% else %}
+  <a href="https://slack.com/oauth/authorize?scope=incoming-webhook,commands+team%3Aread&client_id=277656191908.277104326417&redirect_uri=https://sauce-jobs-staging.herokuapp.com/login">Añadir a Slack</a>
+  {% endif %}
   <a href="/privacy.html">Privacidad</a>
   <a href="mailto:info@salsajobs.com">Contacto</a>
 </footer>

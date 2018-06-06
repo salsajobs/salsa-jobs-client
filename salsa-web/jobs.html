@@ -1,0 +1,82 @@
+--- 
+layout: page
+---
+
+<link rel="stylesheet" href="{{ 'assets/style/jobs.css' | relative_url }}">
+<div id="jobs-loader" class="loader"></div>
+<script>
+  const COLORS = ['#00ccbb, #5386E4', '#187795', '#38686A', '#C33C54', '#23ce6b'];
+  const JobsComponent = {
+    init() {
+        this.$loader = document.getElementById('jobs-loader');
+        this.$jobs = this.$loader.parentElement;
+        {% if site.env == 'production' %}
+          const JOBS_URL = 'https://sauce-jobs-production.herokuapp.com/jobs';
+        {% else %}
+          const JOBS_URL = 'https://sauce-jobs-staging.herokuapp.com/jobs';
+        {% endif %}
+        this._getJobs(JOBS_URL);
+      },
+
+    _getJobs(url) {
+      fetch(url)
+        .then(data => data.json())
+        .then(jobs => this._addJobs(jobs))
+        // .then(this.hideLoader);
+    },
+
+    _addJobs(jobs) {
+      if (jobs) {
+        this.$loader.remove();
+        return jobs
+          .sort(this._compareDates)
+          .forEach(this._addJob.bind(this));
+      } else {
+        this.$jobs.innerHTML = '<h4>No hay ofertas de trabajo disponibles</h4>';
+      }
+    },
+
+    _compareDates(a, b) {
+      if (a.createdAt < b.createdAt) {
+        return 1;
+      }
+      if (a.createdAt > b.createdAt) {
+        return -1;
+      }
+      return 0;
+    },
+
+    _addJob(job, i) {
+      const $job = document.createElement('article');
+      $job.setAttribute('itemscope', '');
+      $job.setAttribute('itemtype', 'http://schema.org/JobPosting');
+
+      $job.innerHTML = `
+        <div class="logo">
+          <span style="background-color: ${COLORS[i + 4 % COLORS.length]}">${job.description[0]}</span>
+        </div>
+        <div class="content">
+            <a itemprop="title" title="${job.description}" href="${job.link}" > ${job.description} </a>
+            <div class="info">
+              <div itemprop="datePosted" title="Fecha de publicación"> ${new Date(job.createdAt).toLocaleDateString()} </div>
+              <div style="visibility:hidden" itemprop="datePosted" title="Fecha de publicación"> ${new Date(job.createdAt).toISOString()} </div>
+              <div title="Puntuación de la oferta" class="score">
+                <span>${job.votes.upvotes} 👍</span> <span>${job.votes.downvotes} 👎</span>
+              </div>
+            </div>
+            <div class="extra-info">
+              <span itemprop="baseSalary" class="badge">30-40K</span>
+              <span itemprop="jobBenefits" class="badge">remote</span>
+            </div>
+        </div>
+        `;
+
+      return this.$jobs.appendChild($job);
+    },
+  };
+
+JobsComponent.init();
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/assets/scripts/sw.js');
+}
+</script>

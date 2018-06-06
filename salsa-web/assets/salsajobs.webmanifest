@@ -22,5 +22,5 @@
     "background_color": "#ffffff",
     "display": "standalone",
     "lang": "es",
-    "start_url": "/jobs.html"
+    "start_url": "https://salsajobs.com/jobs.html"
 }
